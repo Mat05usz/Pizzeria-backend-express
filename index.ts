@@ -5,6 +5,8 @@ import dotenv from "dotenv";
 import mongoose, { ConnectOptions } from "mongoose";
 import bodyParser from 'body-parser';
 import { productRouter } from "./routes/product";
+import { authRouter } from "./routes/auth";
+import { userRouter } from "./routes/user";
 import { roleModel } from "./schemas/userModel";
 const app = express()
 const port = 9000
@@ -16,6 +18,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 
 app.use('/product', productRouter);
+app.use('/auth', authRouter);
+app.use('/user', userRouter);
 
 dotenv.config();
 
