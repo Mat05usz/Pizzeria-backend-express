@@ -1,5 +1,5 @@
 import { verifyToken, isAdmin, isModerator } from "../middlewares/authJWT";
-import { signin, signup } from "../controllers/auth_controller";
+import { signin, signup } from "../controllers/authController";
 import { allAccess, userBoard, moderatorBoard, adminBoard } from "../controllers/userController";
 import express from "express";
 

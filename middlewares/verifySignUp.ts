@@ -31,10 +31,9 @@ export async function checkDuplicateUsernameOrEmail(
     }
 
     next();
-
   } catch (err) {
     console.error(err);
-  }     
+  }
 }
 
 export function checkRolesExisted(

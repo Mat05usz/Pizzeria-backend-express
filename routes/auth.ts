@@ -1,6 +1,6 @@
 import express from "express";
-import { checkDuplicateUsernameOrEmail, checkRolesExisted } from "../middlewares/verifySignUp"
-import { signin, signup } from "../controllers/authController;
+import { checkDuplicateUsernameOrEmail, checkRolesExisted } from "../middlewares/verifySignUp";
+import { signin, signup } from "../controllers/authController";
 
 
 export const authRouter = express.Router();
