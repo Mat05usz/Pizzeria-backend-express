@@ -82,7 +82,15 @@ async function getItemsFromDatabase(
   const readFile = util.promisify(fs.readFile);
 
   async function handleResponse(product: Product) {
-    const imageBuffer = await readFile(product.image);
+    let imageBuffer;
+    try{
+      imageBuffer = await readFile(product.image);
+    }
+    catch(err)
+    {
+      imageBuffer = await readFile("images/default_image.png")
+      console.error(err + '\n' + "defaulting to: default_image.png" );
+    }
     const responseObject: Product = {
       name: product.name,
       price: product.price,
@@ -91,6 +99,7 @@ async function getItemsFromDatabase(
       image: imageBuffer.toString("base64"),
     };
     return responseObject;
+   
   }
 
   const products = await productModel.find(queryOptions);
