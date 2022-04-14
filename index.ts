@@ -9,7 +9,6 @@ import { authRouter } from "./routes/auth";
 import { userRouter } from "./routes/user";
 import { roleModel } from "./schemas/userModel";
 const app = express()
-const port = 9000
 
 app.use(cors());
 
@@ -34,8 +33,8 @@ mongoose.connect(
   process.exit();
 });;
 
-app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+app.listen(process.env.PORT!, () => {
+  console.log(`Example app listening at http://localhost:${process.env.PORT}`)
 });
 
 app.get('/', (req, res) => {
