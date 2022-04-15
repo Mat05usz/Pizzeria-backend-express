@@ -13,7 +13,7 @@ export async function saveProduct(req: Request, res: Response) {
     name: req.body.productName,
     price: req.body.productPrice,
     description: req.body.productDescription,
-    category: req.body.productCategory || "dummyCategory",
+    category: req.body.productCategory,
     image: req.file.path,
   };
 
